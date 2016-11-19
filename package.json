@@ -1,0 +1,31 @@
+{
+  "name": "bank-planner-express",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MogilevichDmitry/bank-planner-express.git"
+  },
+  "author": "Mogilevich Dmitry",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MogilevichDmitry/bank-planner-express/issues"
+  },
+  "homepage": "https://github.com/MogilevichDmitry/bank-planner-express#readme",
+  "dependencies": {
+    "babel-core": "^6.18.2",
+    "babel-preset-es2015": "^6.18.0",
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "mongoose": "^4.6.8"
+  }
+}
