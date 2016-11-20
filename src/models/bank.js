@@ -1,8 +1,8 @@
 import mongoose from 'mongoose';
 
-const BankSchema = mongoose.Schema({
+const bankSchema = mongoose.Schema({
   name: String,
-  percent: Number,
-});
+  percent: Number
+})
 
-export default mongoose.model('Bank', BankSchema);
+export default mongoose.model('Bank', bankSchema);

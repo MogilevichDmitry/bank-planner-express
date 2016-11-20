@@ -6,40 +6,31 @@ import Bank from './models/bank';
 
 const app = express();
 
+mongoose.connect(config.db);
+
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-mongoose.connect(config.db);
-mongoose.Promise = Promise;
-
 app.post('/bank', (req, res) => {
-  Bank.create({
-    name: req.body.name,
-    depositPeriod: req.body.depositPeriod,
-    percent: req.body.percent,
-    frequencyOfPayments: req.body.frequencyOfPayments,
-    currency: req.body.currency,
-    minAmount: req.body.minAmount,
-    minTerm: req.body.minTerm
-  }, (err, bank) => {
+  Bank.create({ name: req.body.name, percent: req.body.percent}, (err, bank) => {
     if(err) {
       console.log(err);
     } else {
-      res.send(bank.name);
+      res.send(bank);
     }
-  });
-});
+  })
+})
 
-app.post('/getBank', (req, res) => {
-  Bank.findOne({ name: req.body.name }, (err, bank) => {
+app.get('/bank/:name', (req, res) => {
+  Bank.findOne({ name: req.params.name }, (err, bank) => {
     if(err) {
-      return res.send(err);
+      console.log(err);
     } else {
-      return res.send(bank);
+      res.send(bank);
     }
-  });
-});
+  })
+})
 
-app.listen(3000, () => {
-  console.log('Server is up');
-});
+app.listen(config.port, () => {
+  console.log('Server is up ' + config.port);
+})
