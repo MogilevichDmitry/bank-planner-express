@@ -1,0 +1,8 @@
+html
+  head
+  body
+    h3 Банки
+    ul
+      for bank in banks
+        li
+          a(href="bank/#{bank.name}") #{bank.name}

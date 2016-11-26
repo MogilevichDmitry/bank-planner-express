@@ -1,0 +1,9 @@
+html
+  head
+  body
+    h3 Курсы валют
+      for currency in currencies
+        h4 #{currency.name}
+        div Покупка: #{currency.purchase}
+        div Продажа: #{currency.sell}
+        div ______________________________________________________

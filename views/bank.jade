@@ -1,0 +1,8 @@
+html
+  head
+  body
+    h3 #{bankName}
+    div
+      for deposit in deposits
+        li
+          a(href="../deposit/#{deposit.name}") #{deposit.name}
